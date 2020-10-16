@@ -24,9 +24,8 @@ public class CSVImportTest {
 		Person person3  = new Person("Carvalho Silva", new Address("Avenida Fechada", "Porto"), new Address("Avenida Aberta", "Lisboa"), new Address("Somewhere", "citywide"));
 		addressBookList.add(person3);
 		
-		List<Person> imported = new CSVImporter("C:\\Users\\leogu\\Documents\\IPB\\DTS/addresses.csv").read();
+		List<Person> imported = new CSVImporter(System.getProperty("user.dir").replace("\\","\\\\") + "\\Addresses\\src\\CSVFiles/addresses.csv").read();
 
-		
 		assertEquals(addressBookList, imported);
 		
 	}

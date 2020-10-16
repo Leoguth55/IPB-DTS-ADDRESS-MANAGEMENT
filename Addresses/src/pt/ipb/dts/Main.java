@@ -9,7 +9,9 @@ import pt.ipb.dts.importer.Importer;
 public class Main {
 	
 	public static void main(String[] args) {
-		Importer importer = new CSVImporter("C:\\Users\\leogu\\Documents\\IPB\\DTS/addresses.csv");
+
+		Importer importer = new CSVImporter( System.getProperty("user.dir").replace("\\","\\\\") + "\\Addresses\\src\\CSVFiles/addresses.csv");
+		
 		List<Person> addressBook = importer.read();
 
 		for(Person person : addressBook) {
